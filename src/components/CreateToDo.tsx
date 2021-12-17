@@ -18,10 +18,7 @@ function CreateToDo() {
       ...oldToDos,
     ]);
     setValue("toDo", "");
-    
-    localStorage.setItem('key', JSON.stringify(savedToDo));
-  };
-  const savedToDo = useRecoilValue(toDoState);
+      };
   
   return (
     <form onSubmit={handleSubmit(handleValid)}>

@@ -18,7 +18,6 @@ function ToDo({ text, category, id }: IToDo) {
         ...oldToDos.slice(targetIndex + 1),
       ];
     });
-    localStorage.setItem('key', JSON.stringify(savedToDo));
   };
 
   const deleteToDo = () => {  
@@ -29,7 +28,6 @@ function ToDo({ text, category, id }: IToDo) {
         ...oldToDos.slice(targetIndex + 1),
       ];
     });
-    localStorage.setItem('key', JSON.stringify(savedToDo));
 
   };
   return (
