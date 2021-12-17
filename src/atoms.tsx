@@ -3,7 +3,8 @@ import {recoilPersist} from 'recoil-persist';
 
 const {persistAtom} = recoilPersist();
 
-const saved= JSON.parse(localStorage.getItem('recoil-persist') as any).toDo;
+const savedToDos= JSON.parse(localStorage.getItem('recoil-persist')as any);
+
 
 
 export enum Categories {
@@ -24,7 +25,7 @@ export const categoryState = atom<Categories>({
 
 export const toDoState = atom<IToDo[]>({
   key: "toDo",
-  default: [saved],
+  default: savedToDos == null ? []:[savedToDos.toDo],
   effects_UNSTABLE: [persistAtom],
 });
 
